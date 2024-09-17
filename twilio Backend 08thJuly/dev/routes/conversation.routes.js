@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const conversation_controller_1 = require("../controllers/conversation.controller");
+const router = express_1.Router();
+// router.post('/initiate', initiateConversation);
+router.post('/createConversation', conversation_controller_1.createOrFetchConversation);
+router.post('/create', conversation_controller_1.createConversation);
+router.post('/addParticipant', conversation_controller_1.addParticipant);
+router.post('/sendTemplate', conversation_controller_1.sendTemplate);
+router.post('/sendPlainTemplateMessage', conversation_controller_1.sendPlainTemplateMessage);
+router.post('/sendMessage', conversation_controller_1.sendGroupMessage);
+exports.default = router;
